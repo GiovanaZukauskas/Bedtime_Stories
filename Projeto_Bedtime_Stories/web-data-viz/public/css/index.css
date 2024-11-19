@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Gwendolyn:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    font-family: monospace;
+    background-color: #f1f3f3;
+  }
+  
+  .header {
+    background-color: #8B0000;
+    width: 100%;
+    height: 85px;
+    font-weight: bold;
+    border-bottom: 4px aliceblue solid;
+  }
+  
+  .header .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    font-family: 'Gwendolyn', sans-serif;
+  }
+  
+  .logo a {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    text-decoration: none;
+  }
+  
+  .logo a img {
+    height: 100%;
+    width: 68px;
+  }
+  
+  .header .container .navbar {
+    display: flex;
+    list-style: none;
+    width: 70%;
+    font-size: 29px;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+  }
+  
+  .header .container .navbar a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .header .container .login a {
+    color: white;
+    text-decoration: none;
+    font-size: 29px;   
+}
+
+.header .container .login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+
+.header .container .login img {
+  width: 3em;
+  filter: brightness(0) invert(1);
+}
+
+.campo img{
+    width: 100%;
+    height: 600px;
+}
+
+.banner .container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.titulo h1 {
+  font-weight: bold;
+  font-size: 120px;
+  font-family: 'Gwendolyn', sans-serif;
+  color: aliceblue;
+}
+
+.sessao {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.container2 {
+  width: 100%;
+  height: 100%;
+  margin-inline: 6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container2.banner{
+  justify-content: flex-start;
+}
+
+.sessao.banner{
+  background-image: url('../imagens/thumbnail_imagem_home.jpg');
+  height: 87vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: auto;
+  box-sizing: border-box;
+  background-color: #000 ;
+}
+
+.sessao.origem{
+  background-color: #8B0000;
+  height: 95vh;
+}
+
+.container2.origem{
+  background-color: aliceblue;
+  height: 85%;
+  border-radius: 30px;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.titulo.origem h1{
+  color: #8B0000;
+  font-size: 100px;
+}
+
+.conteudo.origem img{
+    width: 230px;
+    margin: 0;
+}
+
+.conteudo.origem {
+    width: 100%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 4em;
+}
+
+.conteudo.origem p{
+  width: 65%;
+}
+
+.sessao.sobreMim{
+  background-color: aliceblue;
+  height: 95vh;
+}
+
+.container2.sobreMim{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+}
+
+.titulo.sobreMim h1{
+  color: #8B0000;
+  font-size: 100px;
+}
+
+.titulo.sobreMim {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4em;
+}
+
+.container2 img{
+  height: 100%;
+  margin: -6em;
+}
+
+.container2.sobreMim p{
+  font-size: 25px;
+  justify-content: space-between;
+}
+
+.sessao.fabulas{
+  background-color: #8B0000;
+  height: 95vh;
+}
+
+.container2.fabulas{
+  width: 100%;
+  background-color: #8B0000;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.menuImagens{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6em;
+}
+
+
+.titulo.historias h1{
+  font-size: 80px;
+}
+
+
+.bloco {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  text-align: center; 
+  gap: 2em; 
+  padding: 2em; 
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.bloco img {
+  width: 85%;
+  height: auto; 
+  margin: 0;
+}
+
+.bloco p {
+  color: aliceblue;
+  font-family: 'Gwendolyn', sans-serif;
+  margin: 0;
+  font-size: 27px;
+}
+
+.sessao.compartilhe{
+  background-color: #8B0000;
+  height: 120vh;
+}
+
+.container2.compartilhe{
+  width: 100%;
+  background-color: aliceblue;
+  height: 100vh;
+  border-radius: 30px;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.container2.compartilhe p {
+  width: 80%;
+  font-size: 20px;
+  margin-bottom: 80px;
+}
+
+.titulo.compartilhe h1{
+  color: #8B0000;
+  font-size: 70px;
+  margin-bottom: 50px;
+}
+
+.imagemCompartilhe img{
+  width: 450px;
+  height: 250px;
+}
+
+.imagemCompartilhe button{
+  width: 190px;
+  height: 60px;
+  border-radius: 20px;
+  background-color: #000;
+  color: aliceblue; 
+}
+
+.imagemCompartilhe{
+  width: 80%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.sessao.vote{
+  background-color: aliceblue;
+  height: 100vh;
+}
+
+.container2.vote{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  flex-direction: column;
+}
+
+.titulo.vote h1{
+  color:#8B0000;
+ font-size: 70px;
+}
+
+
+.menuImagens.votacao .bloco {
+  background-color: aliceblue;
+  width: 30%;
+}
+
+.menuImagens.votacao .bloco button{
+  width: 170px;
+  height: 70px;
+  background-color: #000;
+  color: aliceblue;
+  font-family: 'Gwendolyn', sans-serif;
+  font-size: 30px;
+  border-radius: 10px;
+}
+
+.menuImagens.votacao .bloco img{
+  width: 110%;
+
+}
+
+.menuImagens.votacao .bloco p{
+  color: #000;
+
+}
+
+footer{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 12vh;
+  background-color:#8B0000;
+  gap: 25em;
+}
+
+footer img{
+  width: 80px;
+}
+
+footer p{
+  font-size: 20px;
+}
+
+.sessao.chapeuzinho {
+  height: 100vh; 
+  background-image: url('../imagens/01.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover; 
+  width: 100%; 
+  margin: 0;
+}
+  
+  .container2.chapeuzinho{
+    flex-direction: column;
+    gap: 30px;
+
+  }
+
+  .container2.chapeuzinho h1{
+    font-size: 60px;
+    color: #8B0000;
+    font-family: 'Gwendolyn', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container2.chapeuzinho p{
+    font-size: 20px;
+    width: 67%;
+    text-align: center;
+  }
+
+  .sessao.tartaruga {
+    height: 100vh; 
+    background-image: url(../imagens/tartaruguinha.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover; 
+    width: 100%; 
+    margin: 0;
+  }
+    
+    .container2.tartaruga{
+      flex-direction: column;
+      gap: 10px;
+  
+    }
+  
+    .container2.tartaruga h1{
+      font-size: 60px;
+      color: #8B0000;
+      font-family: 'Gwendolyn', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .container2.tartaruga p{
+      font-size: 20px;
+      width: 58%;
+      text-align: center;
+    }
+
+    .fim{
+        font-size: 60px !important;
+        color: #8B0000;
+        font-family: 'Gwendolyn', sans-serif;
+    }
+    
+
+    .sessao.formiga {
+      height: 100vh; 
+      background-image: url(../imagens/03.png);
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: cover; 
+      width: 100%; 
+      margin: 0;
+    }
+      
+      .container2.formiga{
+        flex-direction: column;
+        gap: 10px;
+    
+      }
+    
+      .container2.formiga h1{
+        font-size: 60px;
+        color: #8B0000;
+        font-family: 'Gwendolyn', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    
+      .container2.formiga p{
+        font-size: 20px;
+        width: 58%;
+        text-align: center;
+      }
+
+      .menu {
+        width: 100%;
+        height: 50px; 
+        color:#8B0000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed; 
+        font-size: 20px;
+        top: 0;
+        left: 0;
+        gap: 1000px;
+        margin-top: 1em;
+        cursor: pointer;
+ 
+    }
+
+    .menu2 {
+      width: 100%;
+      height: 50px; 
+      color:#8B0000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed; 
+      font-size: 20px;
+      top: 0;
+      left: 0;
+      gap: 1000px;
+      margin-top: 1em;
+      cursor: pointer;
+
+  }
+
+  .menu3 {
+    width: 100%;
+    height: 50px; 
+    color:#8B0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; 
+    font-size: 20px;
+    top: 0;
+    left: 0;
+    gap: 1000px;
+    margin-top: 1em;
+    cursor: pointer;
+
+}
+
+    
+    

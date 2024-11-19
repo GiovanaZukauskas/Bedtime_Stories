@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Lancelot&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Lancelot", serif;
+    background-color: #1E1E1E;
+}
+
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+
+nav {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    justify-content: flex-start;
+}
+
+nav img {
+    width: 80px;
+    margin-top: 45px;
+    cursor: pointer;
+    
+}
+
+.fundo {
+    height: 100vh;
+}
+
+.cadastro {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; 
+    margin-top: 25px;
+  
+}
+
+.titulo-cadastro {
+    font-size: 35px;
+    color: #E4E4F7;
+}
+
+.titulo-input-cadastro {
+    color: #E4E4F7;
+    font-size: 25px;
+}
+
+.input-cadastro {
+    background-color: #E4E4F7;
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    width: 380px;
+    color: #1E1E1E;
+}
+
+.info-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.outros-cadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.outro-cadastro{
+    color: #E4E4F7;
+    font-size:19px ;
+    cursor: pointer;
+}
+
+.outros-cadastro-mensagem{
+    font-size:19px ;
+    color:red;
+}
+
+.botao-cadastro{
+    display: inline-block;
+    background-color: #1E1E1E;
+    border: 1px solid #E4E4F7;
+    border-radius: 18px;
+    width: 150px;
+    height: 50px;
+    color: #E4E4F7;
+    font-family:"Lancelot", serif ;
+    font-size: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botao-cadastro:hover{
+    background-color: #8B0000;
+}
+
+.botao-cadastro span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .botao-cadastro span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+  }
+  
+  .botao-cadastro:hover span {
+    padding-right: 25px;
+  }
+  
+  .botao-cadastro:hover  span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+a{
+    text-decoration: none;
+}
+
+.card_erro {
+    display: none;
+    background-color: #fff;
+    color: black;
+    width: 230px;
+    position: fixed;
+    border-radius: 4px;
+    border: #271E17 3px solid;
+    padding: 10px;
+    margin-right: 10%;
+}
+
+.card_erro #mensagem_erro {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.alerta_erro {
+    display: flex;
+    justify-content: flex-end;
+}
+
+

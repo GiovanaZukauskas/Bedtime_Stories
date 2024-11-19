@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <title>Login</title>
+    <link rel="shortcut icon" href="assets/icon.png">
+    <link rel="icon" href="imagens/logo_lobo.png">
+</head>
+
+<body>
+    <div class="transicao"></div>
+    <div class="container">
+        <nav>
+            <a href="index.html"><img src="imagens/logo_lobo.png" /></a>
+        </nav>
+
+        <div class="login">
+
+            <span class="titulo-login">Login</span>
+
+            <div class="info-login">
+                <span class="titulo-input-login">E-mail</span>
+                <input class="input-login" type="text" id="input_email" placeholder="user@gmail.com">
+            </div>
+
+            <div class="info-login">
+                <span class="titulo-input-login">Senha</span>
+                <input class="input-login" type="password" id="input_senha" placeholder="********">
+            </div>
+
+            <div class="outros-login">
+               
+                <a href="cadastro.html"> <span class="outro-login">Não tem uma conta?
+                   
+                    </span></a>
+                  <a href="cadastro.html"> <span class="outro-login">Cadastrar</span> </a> 
+            </div>
+            <button onclick="entrar()" class="botao-login"><span class="botao-anim">Entrar</span></button>
+
+        </div>
+
+
+        <img class="fundo" src="imagens/login.png">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function entrar() {
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Por favor, preencha todos os campos para prosseguir!";
+            return false;
+        }
+       
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    setTimeout(function () {
+                        window.location = "./dashboard/dashboard.html";
+                    }, 1000);
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+                mensagem_erro.innerHTML = "Os dados inseridos estão incorretos, por favor, revise seus dados e tente novamente!";
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+
+</script>

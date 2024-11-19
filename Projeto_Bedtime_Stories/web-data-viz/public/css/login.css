@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Lancelot&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Lancelot", serif;
+    background-color:#8B0000;
+}
+
+
+.container {
+    display: flex;
+    width: 100vw;
+    height: 90vh;
+    position: fixed;
+}
+
+
+nav {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: flex-start;
+}
+
+nav img {
+    width: 80px;
+    margin-top: 45px;
+    cursor: pointer;
+}
+
+.fundo {
+    height: 100vh; 
+    margin-left: -80px;
+}
+
+.login {
+    position: relative;
+    top:50px; 
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;   
+    
+
+}
+
+.titulo-login {
+    font-size: 35px;
+    color: aliceblue;
+}
+
+.titulo-input-login {
+    color: aliceblue;
+    font-size: 25px;
+}
+
+.input-login {
+    background-color: aliceblue;
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    width: 380px;
+    color: #000000;
+}
+
+.info-login {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.outros-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.outro-login{
+    color: aliceblue;
+    font-size:19px ;
+    cursor: pointer;
+}
+
+.outro-login-mensagem{
+    font-size:19px ;
+}
+
+.botao-login{
+    display: inline-block;
+    background-color: #E4E4F7;
+    border: 1px solid #1E1E1E;
+    border-radius: 18px;
+    width: 150px;
+    height: 50px;
+    color: #1E1E1E;
+    font-family:"Lancelot", serif ;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.botao-login span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .botao-login span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+  }
+  
+  .botao-login:hover span {
+    padding-right: 25px;
+  }
+  
+  .botao-login:hover  span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+
+a{
+    text-decoration: none;
+}
+

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <title>Cadastro</title>
+    <link rel="shortcut icon" href="assets/icon.png">
+    <link rel="icon" href="imagens/logo_lobo.png">
+</head>
+
+<body>
+    <div class="transicao"></div>
+    <div class="container">
+        <nav>
+            <a href="index.html"><img src="imagens/logo_lobo.png" /></a>
+        </nav>
+
+        <img class="fundo" src="imagens/chapeuzinho_cadastro.png">
+
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+              <span id="mensagem_erro"></span>
+            </div>
+          </div>
+
+        <div class="cadastro">
+
+            <span class="titulo-cadastro">Cadastrar-se</span>
+
+            <div class="info-cadastro">
+                <span class="titulo-input-cadastro">Nome</span>
+                <input class="input-cadastro" type="text" id="input_nome" placeholder="User">
+            </div>
+
+
+            <div class="info-cadastro">
+                <span class="titulo-input-cadastro">E-mail</span>
+                <input class="input-cadastro" type="text" id="input_email" placeholder="user@gmail.com">
+            </div>
+
+            <div class="info-cadastro">
+                <span class="titulo-input-cadastro">Gênero</span>
+                <input class="input-cadastro" type="text" id="input_genero" placeholder="Masculino ou Feminino">
+            </div>
+
+            <div class="info-cadastro">
+                <span class="titulo-input-cadastro">Senha</span>
+                <input class="input-cadastro" type="password" id="input_senha" placeholder=" 8 dígitos um número e um caracter especial">
+            </div>
+
+            <div class="info-cadastro">
+                <span class="titulo-input-cadastro">Confirmar Senha</span>
+                <input class="input-cadastro" type="password" id="input_confirmarSenha" placeholder="Repetir senha">
+            </div>
+
+            <div class="outros-cadastro">
+                <a href="login.html"><span class="outro-cadastro">Já tem cadastro? Entrar</span></a>
+            </div>
+
+            <span class="outros-cadastro-mensagem" id="mensagem"></span>
+            <button onclick="cadastrar()" class="botao-cadastro">Cadastrar</button>
+            
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    // Array para armazenar empresas cadastradas para validação de código de ativação 
+  let listaEmpresasCadastradas = [];
+
+  function cadastrar() {
+
+let nomeVar = input_nome.value;
+let emailVar = input_email.value;
+let generoVar = input_genero.value;
+let senhaVar = input_senha.value;
+let confirmacaoSenhaVar = input_confirmarSenha.value;
+
+let procurarNumeroSenha = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+let procurarCaracteresSenha = ["@", "#"];
+let naoAcheiNumeroSenha = true;
+let naoAcheiCaracteresSenha = true;
+
+function sumirMensagem() {
+  cardErro.style.display = "none";
+}
+
+function limparFormulario() {
+  document.getElementById("input_email").value = "";
+  document.getElementById("input_senha").value = "";
+  document.getElementById("input_confirmacao_senha").value = "";
+}
+
+for (let percorrerSenha = 0;
+  percorrerSenha <= procurarNumeroSenha.length;
+  percorrerSenha++
+) {
+
+  if (senhaVar.indexOf(procurarNumeroSenha[percorrerSenha]) > -1) {
+    naoAcheiNumeroSenha = false;
+    break;
+  }
+
+}
+
+for (let percorrerSenha = 0;
+      percorrerSenha <= procurarNumeroSenha.length;
+      percorrerSenha++
+    ) {
+
+      if (senhaVar.indexOf(procurarNumeroSenha[percorrerSenha]) > -1) {
+        naoAcheiNumeroSenha = false;
+        break;
+      }
+
+    }
+
+    for (let percorrerSenha = 0;
+      percorrerSenha <= procurarCaracteresSenha.length;
+      percorrerSenha++
+    ) {
+
+      if (senhaVar.indexOf(procurarCaracteresSenha[percorrerSenha]) > -1) {
+        naoAcheiCaracteresSenha = false;
+        break;
+      }
+
+    }
+
+    if (
+      nomeVar == false &
+      emailVar == false &
+      generoVar == false &
+      senhaVar == false &
+      confirmacaoSenhaVar == false
+    ) {
+
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "Por favor, preencha todos os campos para prosseguir!";
+
+      return false;
+    } else if (nomeVar == false) {
+
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "Preencha o nome para prosseguir!";
+
+      return false;
+    } else if (emailVar == false) {
+
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "Preencha o email para prosseguir!";
+
+      return false;
+    } else if (!emailVar.indexOf("@") || emailVar.indexOf("@") == emailVar.length - 1) {
+
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "O email deve conter @ e provedor!";
+
+      return false;
+    } else if (senhaVar == false) {
+
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "Preencha a senha para prosseguir!";
+
+      return false;
+    } else if (confirmacaoSenhaVar == false) {
+
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "Preencha a confirmação de senha para prosseguir!";
+
+      return false;
+    } else if (senhaVar.length < 8) {
+
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "A senha deve conter ao menos 8 caracteres!";
+
+      return false;
+    } else if (naoAcheiNumeroSenha) {
+
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "A senha deve conter ao menos um número!";
+
+      return false;
+    } else if (naoAcheiCaracteresSenha) {
+
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "A senha deve conter ao menos um caractere especial!";
+
+      return false;
+    } else if (senhaVar != confirmacaoSenhaVar) {
+
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "A senha e confirmação de senha não conferem!";
+
+      return false;
+    } else if (generoVar != 'Feminino' && generoVar != 'feminino' && generoVar != 'Masculino' && generoVar != 'masculino' ) {
+
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+      "Gênero Inválido!";
+
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar.trim(),
+        emailServer: emailVar.trim(),
+        generoServer: generoVar.trim(),
+        senhaServer: senhaVar.trim()
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+          setTimeout(() => {
+            window.location = "login.html";
+          }, "2000");
+
+          limparFormulario();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+
+          mensagem_erro.innerHTML =
+            "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+
+    return false;
+  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
+
+  </script>

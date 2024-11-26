@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Gwendolyn:wght@400;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Lancelot&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -174,6 +176,8 @@ main {
 
 .conteudo.origem p{
   width: 65%;
+  font-family:"Lancelot", serif ;
+  font-size: 23px;
 }
 
 .sessao.sobreMim{
@@ -210,6 +214,8 @@ main {
 .container2.sobreMim p{
   font-size: 25px;
   justify-content: space-between;
+  font-family:"Lancelot", serif ;
+  font-size: 25px;
 }
 
 .sessao.fabulas{
@@ -286,6 +292,8 @@ main {
   width: 80%;
   font-size: 20px;
   margin-bottom: 80px;
+  font-family:"Lancelot", serif ;
+  font-size: 24px;
 }
 
 .titulo.compartilhe h1{
@@ -376,7 +384,9 @@ footer img{
 }
 
 footer p{
-  font-size: 20px;
+  font-size: 27px;
+  font-family:"Lancelot", serif ;
+  
 }
 
 .sessao.chapeuzinho {
@@ -408,6 +418,8 @@ footer p{
     font-size: 20px;
     width: 67%;
     text-align: center;
+    font-family:"Lancelot", serif ;
+    font-size: 25px;
   }
 
   .sessao.tartaruga {
@@ -436,9 +448,11 @@ footer p{
     }
   
     .container2.tartaruga p{
-      font-size: 20px;
+      font-size: 25px;
       width: 58%;
       text-align: center;
+      font-family:"Lancelot", serif ;
+      margin-top: 7px;
     }
 
     .fim{
@@ -474,9 +488,11 @@ footer p{
       }
     
       .container2.formiga p{
-        font-size: 20px;
+        font-size: 25px;
         width: 58%;
         text-align: center;
+        font-family:"Lancelot", serif ;
+        margin-top: 10px;
       }
 
       .menu {

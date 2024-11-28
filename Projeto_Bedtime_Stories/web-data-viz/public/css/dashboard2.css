@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Lancelot&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Gwendolyn:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body{
+width: 100%;
+height: 100vh;
+display: flex;
+}
+
+.container{
+    width: 20%;
+    height: 100%;
+    background-color: #8B0000;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.container h1{
+    font-family: 'Gwendolyn', sans-serif;
+    color: aliceblue;
+    font-size: 50px;
+    margin-bottom: 100px;
+}
+
+.container p{
+    font-family: "Lancelot", serif;
+    color: aliceblue;
+    font-size: 30px;
+    margin-bottom: 80px;
+    
+}
+
+#usuario{
+    font-family: "Lancelot", serif;
+    color: aliceblue;
+    font-size: 25px; 
+}
+
+.container button {
+    width: 110px;
+    height: 40px;
+    border-radius: 10px;
+    font-family: "Lancelot", serif;
+    font-size: 20px;
+}
+
+.dashboard{
+    width: 80%;
+    height: 100%;
+    background-color: rgb(250, 249, 249);
+}
+
+.dashboard .kpis{
+    width: 100%;
+    height: 25%;
+    background-color: rgb(250, 249, 249);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+    
+}
+
+.kpis h1{
+    font-size: 30px;
+}
+
+.kpis p {
+    display: flex;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.kpis .kpi{
+    background-color:black;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: aliceblue;
+ 
+  
+}

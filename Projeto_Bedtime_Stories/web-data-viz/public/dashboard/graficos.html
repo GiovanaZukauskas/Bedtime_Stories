@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/dashboard2.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -19,13 +20,8 @@
             <button>Sair</button> 
     </div>
 
+    
     <div class="dashboard">
-        <div class="graficos">
-            <div class="grafico">
-            </div>
-            <div class="grafico">
-         </div>
-      </div>
 
         <div class="kpis">
             <div class="kpi">
@@ -44,7 +40,109 @@
             </div>
 
         </div>
+
+        <div class="graficos">
+            <div class="grafico">
+                <canvas id="graficoBarra"></canvas>
+            </div>
+            <div class="grafico">
+                <canvas id="graficoPie"></canvas>
+         </div>
+      </div>
+
+        
     </div>
 
 </body>
 </html>
+<script>
+    const ctx = document.getElementById('graficoBarra');
+    var dados = [5, 10, 12]
+
+    const ctx2 = document.getElementById('graficoPie');
+    var dados2 = [70, 30]
+
+
+
+    new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Chapeuzinho Vermelho', 'A Formiga e a Cigarra', 'A Tartaruga e a Lebre'],
+      datasets: [{
+        label: 'História Mais Votada',
+        data: dados,
+        backgroundColor: ['#8B0000'],
+        borderWidth: 1
+      }]
+    },
+    options: {
+        responsive: true, 
+        maintainAspectRatio: false, 
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: {
+              color: '#000000' 
+            },
+            ticks: {
+              color: '#000000' 
+            }
+          },
+          x: {
+            grid: {
+              color: '#000000' 
+            },
+            ticks: {
+              color: '#000000' 
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            labels: {
+              color: '#000000' 
+            }
+          },
+          title: {
+            display: true,
+            text: 'Distribuição de Votos por História',
+            color: '#000000' 
+          }
+        }
+    }
+});
+
+  new Chart(ctx2, {
+    type: 'pie',
+    data: {
+      labels: ['Feminino', 'Masculino'],
+      datasets: [{
+        data: dados2,
+        backgroundColor: [' #8B0000', '#000000'], 
+        borderWidth: 1
+      }]
+    },
+    options: {
+        responsive: true, 
+        maintainAspectRatio: false, 
+        plugins: {
+          legend: {
+            position: 'top',
+            labels: {
+              color: '#000000', 
+            }
+          },
+          title: {
+            display: true,
+            text: 'Distribuição por Gênero',
+            color: '#000000'
+          }
+        },
+        scales: {
+          
+          }
+        }
+    }
+);
+
+</script>

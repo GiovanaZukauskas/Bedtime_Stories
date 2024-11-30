@@ -12,4 +12,8 @@ router.get("/contarvotos", function (req, res) {
     votacaoController.contarTotalVotos(req, res);
 });
 
+router.post("/inserirvotos", function (req, res) {
+    votacaoController.inserirvotos(req, res);
+});
+
 module.exports = router;

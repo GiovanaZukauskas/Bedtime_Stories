@@ -296,6 +296,7 @@ main {
   font-size: 24px;
 }
 
+
 .titulo.compartilhe h1{
   color: #8B0000;
   font-size: 70px;
@@ -307,12 +308,13 @@ main {
   height: 250px;
 }
 
-.imagemCompartilhe button{
-  width: 190px;
+.compartilhe select{
+  width: 180px;
   height: 60px;
   border-radius: 20px;
   background-color: #000;
   color: aliceblue; 
+  text-align: center;
 }
 
 .imagemCompartilhe{
@@ -323,6 +325,39 @@ main {
   align-items: center;
   margin-top: 1em;
 }
+
+#img_chapeuzinho{
+  width: 30%;
+  margin: 0;
+}
+
+#img_lebre{
+  width: 30%;
+  margin-left: 2em;
+}
+
+#textoImagem{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+ 
+}
+
+#textoImagem div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 100%;
+  flex-direction: column;
+}
+
+#textoImagem div p{
+  margin: 0;
+  margin-bottom: 2em;
+  
+ }
 
 .sessao.vote{
   background-color: aliceblue;
@@ -546,5 +581,10 @@ footer p{
 
 }
 
+.esconder{
+  display: none !important;
+}
     
-    
+footer img{
+  cursor: pointer;
+}

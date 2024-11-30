@@ -15,11 +15,20 @@ function contarTotalVotos(){
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+
+function inserirvotos(fkUsuario, fkHistoria){
+    var instrucaoSql = 
+    `insert into votacao values ('${fkUsuario}', '${fkHistoria}');`;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
     
 
 module.exports = {
     contarVotos,
-    contarTotalVotos
+    contarTotalVotos,
+    inserirvotos
 };
 
 

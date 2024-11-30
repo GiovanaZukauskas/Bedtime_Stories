@@ -9,15 +9,15 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body onload="obterDados()">
+<body onload="obterDados(), exibirNome()">
     <div class="container">
         <div id="titulo">
             <h1>Bedtime <br> Stories</h1>
         </div>
         
-        <p>Olá, <b id="usuario">fulano</b></p>
+        <p>Olá, <b id="usuario"></b></p>
             <button>Histórias</button> <br>
-            <button onclick="window.location.href='../index.html'">Sair</button> 
+            <button onclick="sair()">Sair</button> 
     </div>
 
     
@@ -267,6 +267,19 @@ console.log(dados)
 );
 
     }
+
+
+
+  function exibirNome(){
+    var nomeUsuario = sessionStorage.NOME_USUARIO
+
+    usuario.innerHTML = nomeUsuario
+  }
+
+  function sair(){
+    window.location.href='../index.html'
+    sessionStorage.clear()
+  }
 </script>
 
 

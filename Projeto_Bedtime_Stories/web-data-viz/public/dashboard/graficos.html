@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body>
+<body onload="obterDados()">
     <div class="container">
         <div id="titulo">
             <h1>Bedtime <br> Stories</h1>
@@ -26,17 +26,17 @@
         <div class="kpis">
             <div class="kpi">
                 <h1>História Mais Votada</h1>
-                <p>lalala</p>
+                <p id="p_kpi">lalala</p>
          </div>
 
             <div class="kpi">
                 <h1>Total de Votos</h1>
-                <p>lalala2</p>
+                <p id="p_kpi2">lalala2</p>
             </div>
 
             <div class="kpi">
-                <h1>Distribuição Gênero</h1>
-                <p>lalala3</p>
+                <h1>Gênero Predominante</h1>
+                <p id="p_kpi3">lalala3</p>
             </div>
 
         </div>
@@ -56,21 +56,97 @@
 </body>
 </html>
 <script>
-    const ctx = document.getElementById('graficoBarra');
-    var dados = [5, 10, 12]
+  function obterDados(){
 
-    const ctx2 = document.getElementById('graficoPie');
-    var dados2 = [70, 30]
+fetch(`/votacao/contagem`, { cache: 'no-store' }).then(function (response) {
+  if (response.ok) {
+      response.json().then(function (resposta) {
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+          plotarGrafico(resposta);
+          exibirKPI(resposta);
+
+          
+          
+
+      });
+  } else {
+      console.error('Nenhum dado encontrado ou erro na API');
+  }
+})
+  .catch(function (error) {
+      console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+  });
+
+
+  fetch(`/votacao/contarvotos`, { cache: 'no-store' }).then(function (response) {
+  if (response.ok) {
+      response.json().then(function (resposta) {
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+         
+          exibir(resposta)
+          
+
+      });
+  } else {
+      console.error('Nenhum dado encontrado ou erro na API');
+  }
+})
+  .catch(function (error) {
+      console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+  });
 
 
 
-    new Chart(ctx, {
+  fetch(`/usuarios/generos`, { cache: 'no-store' }).then(function (response) {
+  if (response.ok) {
+      response.json().then(function (resposta) {
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+         
+          exibirGeneroPredominante(resposta)
+          plotarGrafico2(resposta)
+          
+
+      });
+  } else {
+      console.error('Nenhum dado encontrado ou erro na API');
+  }
+})
+  .catch(function (error) {
+      console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+  });
+
+}
+
+
+
+
+
+function plotarGrafico(dados){
+        console.log(dados)
+
+      var listaContagem = []
+      var listaHistorias = []
+
+      for(var posicao = 0; posicao < dados.length; posicao +=1){
+        var historiaAtual =  dados[posicao].Historia
+        listaHistorias.push(historiaAtual)
+
+        var contagemAtual = dados[posicao].Contagem
+        listaContagem.push(contagemAtual)
+      }
+
+      const graficoVotacao = document.getElementById('graficoBarra');
+  
+      new Chart(graficoVotacao, {
     type: 'bar',
     data: {
-      labels: ['Chapeuzinho Vermelho', 'A Formiga e a Cigarra', 'A Tartaruga e a Lebre'],
+      labels: listaHistorias,
       datasets: [{
-        label: 'História Mais Votada',
-        data: dados,
+        label: 'Votos',
+        data: listaContagem,
         backgroundColor: ['#8B0000'],
         borderWidth: 1
       }]
@@ -112,12 +188,57 @@
     }
 });
 
-  new Chart(ctx2, {
+}
+
+function exibirKPI(dados){
+
+ var kpi1 = dados[0].Historia
+  
+ p_kpi.innerHTML = kpi1
+
+}
+
+function exibir(dados){
+console.log(dados)
+
+  var kpi2 = dados[0].Contagem
+
+  p_kpi2.innerHTML = kpi2
+}
+    
+function exibirGeneroPredominante(dados){
+console.log(dados)
+
+  var kpi3 = dados[0].genero
+
+  p_kpi3.innerHTML = kpi3
+}
+
+    
+
+    function plotarGrafico2(dados){
+
+      const graficoGenero = document.getElementById('graficoPie');
+
+      var listaGenero = []
+      var listacontagemGenero = []
+
+
+      for(var posicao = 0; posicao < dados.length; posicao +=1){
+        var generoAtual =  dados[posicao].genero
+        listaGenero.push(generoAtual)
+
+        var contagemGenero = dados[posicao].Contagem
+        listacontagemGenero.push(contagemGenero)
+      }
+
+      
+ new Chart(graficoGenero, {
     type: 'pie',
     data: {
-      labels: ['Feminino', 'Masculino'],
+      labels: listaGenero,
       datasets: [{
-        data: dados2,
+        data: listacontagemGenero,
         backgroundColor: [' #8B0000', '#000000'], 
         borderWidth: 1
       }]
@@ -145,4 +266,8 @@
     }
 );
 
+    }
 </script>
+
+
+

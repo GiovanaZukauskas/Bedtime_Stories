@@ -23,7 +23,14 @@ function cadastrar(nome, email, genero, senha) {
     return database.executar(instrucaoSql);
 }
 
+function contarGenero() {
+
+    var instrucaoSql = `select genero, count(genero) as Contagem from usuario group by Genero order by Contagem desc;`
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    contarGenero
 };

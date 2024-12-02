@@ -327,6 +327,12 @@ main {
 }
 
 #img_chapeuzinho{
+  width: 45%;
+  margin: 0;
+  
+}
+
+#img_lobo{
   width: 30%;
   margin: 0;
 }
@@ -588,3 +594,4 @@ footer p{
 footer img{
   cursor: pointer;
 }
+

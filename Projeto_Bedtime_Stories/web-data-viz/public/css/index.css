@@ -333,14 +333,26 @@ main {
 }
 
 #img_lobo{
-  width: 30%;
+  width: 35%;
   margin: 0;
 }
 
 #img_lebre{
   width: 30%;
   margin-left: 2em;
+  margin-bottom: 10px;
 }
+
+#img_formiga{
+  width: 35%;
+  margin: 0;
+}
+
+#img_cigarra{
+  width: 35%;
+  margin: 0;
+}
+
 
 #textoImagem{
   display: flex;

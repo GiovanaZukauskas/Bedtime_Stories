@@ -1,7 +1,7 @@
 # Bedtime Stories  
 ## Fábulas 🦊📖  
 
-![Imagem das fábulas](imagens/thumbnail_aformiga-(2))
+![Imagem das fábulas](Projeto_Bedtime_Stories/public/imagens/thumbnail_aformiga-(2).png)
 
 As fábulas são histórias curtas e encantadoras, geralmente protagonizadas por animais que falam e agem como humanos. Surgiram há milhares de anos, transmitidas oralmente por diferentes culturas, como uma forma simples e poderosa de compartilhar sabedoria e valores morais. Alguns dos mais famosos fabulistas incluem Esopo e La Fontaine.  
 

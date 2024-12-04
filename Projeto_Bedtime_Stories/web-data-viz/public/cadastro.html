@@ -160,7 +160,7 @@ for (let percorrerSenha = 0;
         "Preencha o email para prosseguir!";
 
       return false;
-    } else if (!emailVar.indexOf("@") || emailVar.indexOf("@") == emailVar.length - 1) {
+    } else if (emailVar.indexOf("@") == -1 || emailVar.indexOf("@") == emailVar.length - 1) {
 
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
